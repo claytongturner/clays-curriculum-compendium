@@ -1,0 +1,118 @@
+/* Synthwave Neon Theme */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a2e; /* Dark background to make neon colors pop */
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #f72585; /* Neon pink */
+    font-size: 3em;
+    text-shadow: 0 0 5px #ff0a54, 0 0 10px #f72585, 0 0 15px #7209b7;
+}
+h2 {
+    color: #37f725; /* Neon green */
+    font-size: 2em;
+    text-shadow: 0 0 5px #37f725, 0 0 10px #37f725, 0 0 15px #7209b7;
+}
+p {
+    color: #4cc9f0; /* Neon blue */
+    font-size: 1.0em;
+    text-shadow: 0 0 5px #4895ef, 0 0 10px #4cc9f0;
+}
+
+a {
+    color: #f48c06; /* Neon yellow for links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c625f7; /* Neon purple when hovering */
+}
+
+button {
+    background-color: #7209b7; /* Neon purple */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-shadow: 0 0 5px #ff0a54, 0 0 10px #f72585;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f72585; /* Neon pink */
+}
+
+/* Synthwave styles for lists */
+ul {
+    list-style-type: none; /* Removes default bullet points */
+    padding: 0;
+    margin: 20px 0;
+}
+
+li {
+    color: #72f04c; /* Neon green for list items */
+    font-size: 1.2em;
+    margin: 10px 0;
+    text-shadow: 0 0 5px #4895ef, 0 0 10px #4cc9f0;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Add custom bullet points */
+li::before {
+    content: '▶'; /* Synthwave-style arrow */
+    position: absolute;
+    left: 0;
+    color: #f72585; /* Neon pink */
+    text-shadow: 0 0 5px #ff0a54, 0 0 10px #f72585;
+}
+
+/* Hover effect */
+li:hover {
+    color: #f72585; /* Neon pink on hover */
+    text-shadow: 0 0 5px #ff0a54, 0 0 10px #f72585;
+}
+
+li::before:hover {
+    color: #4cc9f0; /* Neon blue for the arrow on hover */
+    text-shadow: 0 0 5px #4895ef, 0 0 10px #4cc9f0;
+}
+
+/* Lightbox style */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    z-index: 10; /* On top of all other content */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid #f72585; /* Neon pink border for pop */
+    box-shadow: 0 0 10px #f72585, 0 0 20px #7209b7;
+    transition: all 0.3s ease;
+}
+
+.lightbox img {
+    width: 100%;
+}
+
+/* 3D tilt effect for thumbnails */
+.thumbnail {
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: perspective(500px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+}

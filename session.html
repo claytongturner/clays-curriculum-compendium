@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Recap - Clay's Curriculum Compendium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Session Recap</h1>
+    <p>Here’s a summary of my study sessions. Click on a session to view my notes.</p>
+
+    <!-- Session 1 Recap -->
+    <div class="session">
+        <h2>Session 1: VPC Basics</h2>
+        <p>In this session, I learned the fundamentals of VPCs, subnets, and route tables.</p>
+        <!-- Thumbnail for Session 1 -->
+        <img id="thumbnail1" src="assets/thumbVPC.jpg" alt="Session 1 Notes Thumbnail" class="thumbnail" style="width:200px; cursor:pointer;" onclick="openLightbox('lightbox1');">
+
+        <!-- Lightbox for Session 1 -->
+        <div id="lightbox1" class="lightbox" onclick="closeLightbox('lightbox1');" style="display:none;">
+            <img src="assets/thumbVPC.jpg" alt="Session 1 Notes Expanded" class="lightbox-content" style="width: 80%; height: auto;">
+        </div>
+    </div>
+
+    <!-- Session 2 Recap -->
+    <div class="session">
+        <h2>Session 2: Security Groups and NACLs</h2>
+        <p>This session covered the differences between security groups and network ACLs, including their rules and use cases.</p>
+        <!-- Thumbnail for Session 2 -->
+        <img id="thumbnail2" src="assets/thumbGateways.jpg" alt="Session 2 Notes Thumbnail" class="thumbnail" style="width:200px; cursor:pointer;" onclick="openLightbox('lightbox2');">
+
+        <!-- Lightbox for Session 2 -->
+        <div id="lightbox2" class="lightbox" onclick="closeLightbox('lightbox2');" style="display:none;">
+            <img src="assets/thumbGateways.jpg" alt="Session 2 Notes Expanded" class="lightbox-content" style="width: 80%; height: auto;">
+        </div>
+    </div>
+
+    <a href="index.html">Back to Home</a>
+
+    <script>
+        // Function to open the lightbox
+        function openLightbox(lightboxId) {
+            document.getElementById(lightboxId).style.display = "flex";
+        }
+
+        // Function to close the lightbox
+        function closeLightbox(lightboxId) {
+            document.getElementById(lightboxId).style.display = "none";
+        }
+
+        // Function to handle 3D tilt effect
+        const thumbnails = document.querySelectorAll('.thumbnail');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('mousemove', (e) => {
+                const rect = thumbnail.getBoundingClientRect();
+                const offsetX = e.clientX - rect.left;
+                const offsetY = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((centerY - offsetY) / centerY) * 10;
+                const rotateY = ((offsetX - centerX) / centerX) * 10;
+                thumbnail.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            thumbnail.addEventListener('mouseleave', () => {
+                thumbnail.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg)';
+            });
+        });
+    </script>
+
+</body>
+</html>

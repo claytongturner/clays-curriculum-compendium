@@ -23,8 +23,10 @@ p {
 }
 
 a {
-    color: #f48c06; /* Neon yellow for links */
+    color: #f48c06; /* Neon orange for links */
     text-decoration: none;
+    text-align: center;
+    padding: 4em;
 }
 
 a:hover {
@@ -58,28 +60,22 @@ li {
     margin: 10px 0;
     text-shadow: 0 0 5px #4895ef, 0 0 10px #4cc9f0;
     position: relative;
-    padding-left: 20px;
+    padding-left: 0em; /* Adjust this to set the space for the bullet */
+    list-style-type: none; /* Remove default bullets */
 }
 
 /* Add custom bullet points */
 li::before {
     content: '▶'; /* Synthwave-style arrow */
     position: absolute;
-    left: 0;
+    left: 4em; /* Adjust this value as needed */;
+    top: 50%;
+    transform: translateY(-50%);
     color: #f72585; /* Neon pink */
     text-shadow: 0 0 5px #ff0a54, 0 0 10px #f72585;
 }
 
-/* Hover effect */
-li:hover {
-    color: #f72585; /* Neon pink on hover */
-    text-shadow: 0 0 5px #ff0a54, 0 0 10px #f72585;
-}
 
-li::before:hover {
-    color: #4cc9f0; /* Neon blue for the arrow on hover */
-    text-shadow: 0 0 5px #4895ef, 0 0 10px #4cc9f0;
-}
 
 /* Lightbox style */
 .lightbox {
@@ -110,9 +106,26 @@ li::before:hover {
 
 /* 3D tilt effect for thumbnails */
 .thumbnail {
+    border-radius: 10%; /* Rounded corners */
     transition: transform 0.3s ease;
 }
 
 .thumbnail:hover {
     transform: perspective(500px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
 }
+
+
+/* Styling for the profile picture */
+.profile-pic {
+    width: 250px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10%; /* Rounded corners */
+    transition: transform 0.3s ease; /* Smooth transition for 3D tilt */
+    box-shadow: 0 0 10px #f72585, 0 0 20px #7209b7; /* Neon effect */
+}
+
+.profile-pic:hover {
+    transform: perspective(500px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+}
+
+
